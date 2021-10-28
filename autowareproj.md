@@ -51,6 +51,7 @@ $ `ros2 launch autoware_launch planning_simulator.launch.xml map_path:=/workspac
 rviz2画2D Pose estimate作为初始点，2D Nav Goal作为结束点;
 打开
 [http://localhost:8085/autoware_web_controller/](http://localhost:8085/autoware_web_controller/)
+Engage the ego vehicle.
 
 # 运行 rviz2 
 
