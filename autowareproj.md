@@ -36,7 +36,7 @@ $ `cd /workspace/autoware.proj/`
 
 $ `source install/setup.zsh`
 
-$ `ros2 bag play /workspace、datasets/sample.625-2.bag2_0.db3 -r 0.2`
+$ `ros2 bag play /workspace/datasets/sample.625-2.bag2_0.db3 -r 0.2`
 
 $ `ros2 launch autoware_launch logging_simulator.launch.xml map_path:=/workspace/datasets/rosbag_sample_map/ vehicle_model:=lexus sensor_model:=aip_xx1`
 
