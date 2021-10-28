@@ -20,7 +20,7 @@ docker run --gpus all -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/neoneone/au
 
 ## open browser
 
-http://127.0.0.1:8080/tree?
+[http://127.0.0.1:8080/tree?](http://127.0.0.1:8080/tree?)
 
 # 介绍
 
