@@ -28,7 +28,7 @@ docker run --gpus all -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/neoneone/au
 
 ## portainer
 
-添加新的container 
+添加新的container，设置映射8080端口和env环境设置登录密码AUTHENTICATE_VIA_JUPYTER
 
 ## open browser
 
