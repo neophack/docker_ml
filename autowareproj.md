@@ -26,7 +26,7 @@ https://gitee.com/neophack/autowareprojdata/releases/1
 
 $ `source /opt/ros/galactic/setup.zsh`
 
-$ `source ~/.bashrc`
+$ `source ~/.zshrc`
 
 $ `colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release`
 
