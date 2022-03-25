@@ -1,5 +1,15 @@
 # install docker and nvidia-docker2
 
+创建docker组
+
+sudo groupadd docker
+
+将当前用户加入docker组
+
+sudo gpasswd -a ${USER} docker
+
+重新启动docker服务（下面是CentOS7的命令）
+
 需要好的网络
 
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-docker
