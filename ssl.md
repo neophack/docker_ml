@@ -1,3 +1,4 @@
+```
 openssl 生成nginx 证书
 
 这里说下Linux 系统怎么通过openssl命令生成 证书。
@@ -33,3 +34,4 @@ server{
     ssl_certificate_key /usr/local/webserver/nginx/conf/vhost/ssl/server.key;
 }
 端口一定是443端口
+```
