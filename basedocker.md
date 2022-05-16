@@ -24,7 +24,7 @@ sudo chmod a+rw /var/run/docker.sock
 
 ## nvidia docker支持
 
-https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-docker
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit
 
 # docker图形化管理软件，带GPU功能
 
