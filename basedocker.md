@@ -65,6 +65,7 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.
 
 # bind port 8080
 # bind dir /workspace
+# ssh 需要先设置ml账号的密码，即可通过账号密码访问
 
 docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest 
 ```
