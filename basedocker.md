@@ -89,7 +89,7 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest
 # ros2 galactic
 # chinese input
 
-# bind port novnc 6901, clion 5678
+# bind port novnc 6901, clion 5678 该端口必须使用https访问
 # bind dir /home/project
 
 docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:latest 
