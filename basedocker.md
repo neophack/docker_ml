@@ -2,25 +2,25 @@
 
 ## 安装docker
 
-sudo apt install docker.io
+`sudo apt install docker.io`
 
 ## 设置非root账号不用sudo直接执行docker命令
 
 创建docker组
 
-sudo groupadd docker
+`sudo groupadd docker`
 
 将当前用户加入docker组
 
-sudo gpasswd -a ${USER} docker
+`sudo gpasswd -a ${USER} docker`
 
 重启docker服务(生产环境请慎用)：
 
-sudo systemctl restart docker
+`sudo systemctl restart docker`
 
 添加访问和执行权限：
 
-sudo chmod a+rw /var/run/docker.sock
+`sudo chmod a+rw /var/run/docker.sock`
 
 ## nvidia docker支持
 
@@ -28,7 +28,7 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.
 
 # docker图形化管理软件，带GPU功能
 
-$ docker run -d -p 8800:8000 -p 9900:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data registry.cn-shenzhen.aliyuncs.com/neoneone/portainer:latest
+`docker run -d -p 8800:8000 -p 9900:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data registry.cn-shenzhen.aliyuncs.com/neoneone/portainer:latest`
 
 
 
@@ -70,7 +70,7 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest
 ```
 ## docker run 
 
-docker run --gpus all -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest 
+`docker run --gpus all -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest `
 
 ## portainer
 
