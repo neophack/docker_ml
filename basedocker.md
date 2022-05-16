@@ -1,5 +1,11 @@
 # install docker and nvidia-docker2
 
+## 安装docker
+
+sudo apt install docker.io
+
+## 设置非root账号不用sudo直接执行docker命令
+
 创建docker组
 
 sudo groupadd docker
@@ -8,33 +14,61 @@ sudo groupadd docker
 
 sudo gpasswd -a ${USER} docker
 
-重新启动docker服务（下面是CentOS7的命令）
+重启docker服务(生产环境请慎用)：
 
-需要好的网络
+sudo systemctl restart docker
+
+添加访问和执行权限：
+
+sudo chmod a+rw /var/run/docker.sock
+
+## nvidia docker支持
 
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-docker
 
-# docker图形化管理软件
+# docker图形化管理软件，带GPU功能
 
 $ docker run -d -p 8800:8000 -p 9900:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainerci/portainer:pr4791
 
-## open browser
+## 打开portainer管理页面，设置用户信息
 
 [http://127.0.0.1:9900](http://127.0.0.1:9900)
 
-# docker image
+# 深度学习镜像
 
-## 20.04 with cuda 11.4
+## 深度学习训练环境
 
-docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/autowareproj:latest 
+可以使用jupyter vnc vscode ssh sftp等常用工具，并且只占用一个端口。
 
-## 18.04 with cuda 11.1
+```
+# Ubuntu 20.04
+# Note: Container image 21.06-py3 contains Python 3.8.
+# NVIDIA CUDA 11.3.1
+# cuBLAS 11.5.1.109
+# NVIDIA cuDNN 8.2.1
+# NVIDIA NCCL 2.9.9 (optimized for NVLink™ )
+# Note: Although NCCL is packaged in the container, it does not affect TensorRT nor inferencing in any way.
+# rdma-core 32.1
+# OpenMPI 4.1.1rc1
+# OpenUCX 1.10.1
+# GDRCopy 2.2
+# NVIDIA HPC-X 2.8.2rc3
+# Nsight Compute 2021.1.0.18
+# Nsight Systems 2021.2.1.58
+# TensorRT 7.2.3.4
+# ml-workspace
+# sogou input
+# pytorch 1.11
+# novnc
 
-docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/autowareproj:ubuntu18.04
+# bind port 8080
+# bind dir /workspace
 
-# docker run 
+docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest 
+```
+## docker run 
 
-docker run --gpus all -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/neoneone/autowareproj:latest
+docker run --gpus all -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest 
 
 ## portainer
 
@@ -44,7 +78,20 @@ docker run --gpus all -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/neoneone/au
 
 [http://127.0.0.1:8080/tree?](http://127.0.0.1:8080/tree?)
 
-# 介绍
 
-可以使用jupyter vnc vscode ssh sftp等常用工具，并且只占用一个端口。
+## 深度学习部署环境，主要方便C++单步调试
+```
+# Ubuntu 20.04
+# NVIDIA CUDA 11.3.1
+# clion 21.2
+# ros2 galactic
+# chinese input
+
+# bind port novnc 6901, clion 5678
+# bind dir /home/project
+
+docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:latest 
+```
+
+
 
