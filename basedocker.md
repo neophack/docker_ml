@@ -28,7 +28,9 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.
 
 # docker图形化管理软件，带GPU功能
 
-$ docker run -d -p 8800:8000 -p 9900:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainerci/portainer:pr4791
+$ docker run -d -p 8800:8000 -p 9900:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data registry.cn-shenzhen.aliyuncs.com/neoneone/portainer:latest
+
+
 
 ## 打开portainer管理页面，设置用户信息
 
