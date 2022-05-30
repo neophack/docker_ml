@@ -36,6 +36,7 @@ distribution=ubuntu22.04 && curl -fsSL https://nvidia.github.io/libnvidia-contai
 `sudo systemctl restart docker`
 
 pop os dont use `nvidia-container-toolkit/jammy,now 1.8.0-1pop1~1644260705~22.04~60691e5 amd64`
+
 `sudo apt install nvidia-container-toolkit/bionic`
 
 `sudo docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi`
