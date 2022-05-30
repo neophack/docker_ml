@@ -26,6 +26,11 @@
 
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit
 
+distribution=ubuntu22.04 && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+&& curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
+      sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+      sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
 # docker图形化管理软件，带GPU功能
 
 `docker run -d -p 8800:8000 -p 9900:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data registry.cn-shenzhen.aliyuncs.com/neoneone/portainer:latest`
