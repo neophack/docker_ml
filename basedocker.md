@@ -82,7 +82,7 @@ pop os dont use `nvidia-container-toolkit/jammy,now 1.8.0-1pop1~1644260705~22.04
 # bind dir /workspace
 # ssh 需要先设置ml账号的密码，即可通过账号密码访问
 
-docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest 
+docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros 
 ```
 ## docker run 
 
