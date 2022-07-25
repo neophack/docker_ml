@@ -33,17 +33,17 @@ distribution=ubuntu22.04 && curl -fsSL https://nvidia.github.io/libnvidia-contai
       sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list && apt update
 ```
 
-`sudo systemctl restart docker`
-
 pop os dont use `nvidia-container-toolkit/jammy,now 1.8.0-1pop1~1644260705~22.04~60691e5 amd64`
 
 `sudo apt install nvidia-container-toolkit/bionic`
+
+`sudo systemctl restart docker`
 
 `sudo docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi`
 
 # docker图形化管理软件，带GPU功能
 
-`docker run -d -p 8800:8000 -p 9900:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data registry.cn-shenzhen.aliyuncs.com/neoneone/portainer:latest`
+`docker run -d -p 8800:8000 -p 9900:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainerci/portainer:pr4791`
 
 
 
@@ -86,7 +86,7 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest
 ```
 ## docker run 
 
-`docker run --gpus all -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest `
+`docker run --gpus all -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros
 
 ## portainer
 
