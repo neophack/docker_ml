@@ -123,3 +123,6 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:late
 ## 注意事项
 
 使用容器时，数据和程序放挂载的文件夹，防止系统损坏导致文件丢失，也防止过多数据导致commit的镜像巨大
+
+--restart=always可以让容器开机启动，否则需要手动启动
+
