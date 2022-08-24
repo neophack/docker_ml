@@ -1,10 +1,10 @@
-# install docker and nvidia-docker2
+# 安装 docker and nvidia环境
 
 ## 安装docker
 
 `sudo apt install docker.io`
 
-## 设置非root账号不用sudo直接执行docker命令
+### 设置非root账号不用sudo直接执行docker命令
 
 创建docker组
 
@@ -90,15 +90,15 @@ pop os和ubuntu 安装
 
 docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros 
 ```
-## docker run 
+### docker run 
 
 `docker run --gpus all -p 8080:8080 -v /dev/shm:/dev/shm -v 你的pc文件夹:/workspace -e AUTHENTICATE_VIA_JUPYTER=你的登录密码 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros`
 
-## portainer
+### portainer
 
 添加新的container，设置映射8080端口和env环境设置登录密码AUTHENTICATE_VIA_JUPYTER
 
-## open browser
+### open browser
 
 [http://127.0.0.1:8080/tree?](http://127.0.0.1:8080/tree?)
 
@@ -116,7 +116,7 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros
 
 docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:latest 
 ```
-## docker run 
+### docker run 
 
 `docker run --gpus all -p 6901:6901 -p 5678:5678 -v /dev/shm:/dev/shm -v 你的pc文件夹:/home/project registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:latest`
 
