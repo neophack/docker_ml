@@ -120,4 +120,6 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:late
 
 `docker run --gpus all -p 6901:6901 -p 5678:5678 -v /dev/shm:/dev/shm -v 你的pc文件夹:/home/project registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:latest`
 
+## 注意事项
 
+使用容器时，数据和程序放挂载的文件夹，防止系统损坏导致文件丢失，也防止过多数据导致commit的镜像巨大
