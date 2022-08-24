@@ -33,11 +33,17 @@ distribution=ubuntu22.04 && curl -fsSL https://nvidia.github.io/libnvidia-contai
       sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list && apt update
 ```
 
-pop os dont use `nvidia-container-toolkit/jammy,now 1.8.0-1pop1~1644260705~22.04~60691e5 amd64`
+pop os不要安装这个包 nvidia-container-toolkit/jammy,now 1.8.0-1pop1~1644260705~22.04~60691e5 amd64 会导致新建容器报错
+
+pop os和ubuntu 安装 
 
 `sudo apt install nvidia-container-toolkit/bionic`
 
+重启docker 
+
 `sudo systemctl restart docker`
+
+测试nvidia是否可用 
 
 `sudo docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi`
 
@@ -45,7 +51,7 @@ pop os dont use `nvidia-container-toolkit/jammy,now 1.8.0-1pop1~1644260705~22.04
 
 `docker run -d -p 8800:8000 -p 9900:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainerci/portainer:pr4791`
 
-
+其中9900为pc端口，9000为docker内服务端口
 
 ## 打开portainer管理页面，设置用户信息
 
@@ -78,15 +84,15 @@ pop os dont use `nvidia-container-toolkit/jammy,now 1.8.0-1pop1~1644260705~22.04
 # pytorch 1.11
 # novnc
 
-# bind port 8080
-# bind dir /workspace
+# bind port 8080 使用-p冒号前面是pc端口可以自己设置，后面是容器服务端口8080
+# bind dir /workspace 使用-v冒号前面是pc的文件夹路径，后面容器内的文件夹路径
 # ssh 需要先设置ml账号的密码，即可通过账号密码访问
 
 docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros 
 ```
 ## docker run 
 
-`docker run --gpus all -p 8080:8080 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros
+`docker run --gpus all -p 8080:8080 -v /dev/shm:/dev/shm -v 你的pc文件夹:/workspace -e AUTHENTICATE_VIA_JUPYTER=你的登录密码 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros
 
 ## portainer
 
@@ -110,6 +116,8 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros
 
 docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:latest 
 ```
+## docker run 
 
+`docker run --gpus all -p 6901:6901 -p 5678:5678 -v /dev/shm:/dev/shm -v 你的pc文件夹:/home/project registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:latest
 
 
