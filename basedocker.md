@@ -92,7 +92,7 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros
 ```
 ## docker run 
 
-`docker run --gpus all -p 8080:8080 -v /dev/shm:/dev/shm -v 你的pc文件夹:/workspace -e AUTHENTICATE_VIA_JUPYTER=你的登录密码 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros
+`docker run --gpus all -p 8080:8080 -v /dev/shm:/dev/shm -v 你的pc文件夹:/workspace -e AUTHENTICATE_VIA_JUPYTER=你的登录密码 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros`
 
 ## portainer
 
@@ -118,6 +118,6 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:late
 ```
 ## docker run 
 
-`docker run --gpus all -p 6901:6901 -p 5678:5678 -v /dev/shm:/dev/shm -v 你的pc文件夹:/home/project registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:latest
+`docker run --gpus all -p 6901:6901 -p 5678:5678 -v /dev/shm:/dev/shm -v 你的pc文件夹:/home/project registry.cn-shenzhen.aliyuncs.com/neoneone/nvcr-jetbrains-clion:latest`
 
 
