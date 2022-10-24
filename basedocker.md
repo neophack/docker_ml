@@ -38,6 +38,7 @@ pop os不要安装这个包 nvidia-container-toolkit/jammy,now 1.8.0-1pop1~16442
 pop os和ubuntu 安装 
 
 `sudo apt install libnvidia-container1/bionic`
+
 `sudo apt install nvidia-container-toolkit/bionic`
 
 
