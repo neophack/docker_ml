@@ -30,7 +30,7 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.
 distribution=ubuntu22.04 && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
 && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
       sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
-      sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list && apt update
+      sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list && sudo apt update
 ```
 
 pop os不要安装这个包 nvidia-container-toolkit/jammy,now 1.8.0-1pop1~1644260705~22.04~60691e5 amd64 会导致新建容器报错
