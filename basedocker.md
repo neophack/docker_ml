@@ -67,21 +67,27 @@ pop os和ubuntu 安装
 可以使用jupyter vnc vscode ssh sftp等常用工具，并且只占用一个端口。
 
 ```
-# Ubuntu 20.04
-# Note: Container image 21.06-py3 contains Python 3.8.
-# NVIDIA CUDA 11.3.1
-# cuBLAS 11.5.1.109
-# NVIDIA cuDNN 8.2.1
-# NVIDIA NCCL 2.9.9 (optimized for NVLink™ )
-# Note: Although NCCL is packaged in the container, it does not affect TensorRT nor inferencing in any way.
-# rdma-core 32.1
-# OpenMPI 4.1.1rc1
-# OpenUCX 1.10.1
-# GDRCopy 2.2
-# NVIDIA HPC-X 2.8.2rc3
-# Nsight Compute 2021.1.0.18
-# Nsight Systems 2021.2.1.58
-# TensorRT 7.2.3.4
+# Ubuntu 20.04 including Python 3.8
+# NVIDIA CUDA® 12.0.1
+# NVIDIA cuBLAS from CUDA 12.0.1
+# NVIDIA cuDNN 8.7.0.84
+# NVIDIA NCCL 2.16.5 (optimized for NVIDIA NVLink®)
+# NVIDIA RAPIDS™ 22.12.0 (For x86, only these libraries are included: cudf, xgboost, rmm, cuml, and cugraph.)
+# Apex
+# rdma-core 36.0
+# NVIDIA HPC-X 2.13
+# OpenMPI 4.1.4+
+# GDRCopy 2.3
+# TensorBoard 2.9.0
+# Nsight Compute 2022.4.1.6
+# Nsight Systems 2022.5.1
+# NVIDIA TensorRT™ 8.5.2.2
+# Torch-TensorRT 1.4.0dev0
+# NVIDIA DALI® 1.21.0
+# MAGMA 2.6.2
+# JupyterLab 2.3.2 including Jupyter-TensorBoard
+# TransformerEngine 0.4
+# opencv-cuda 4.7.0
 # ml-workspace
 # sogou input
 # pytorch 1.11
@@ -95,7 +101,7 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros
 ```
 ### docker run 
 
-`docker run --gpus all --name=ml-workspace --restart=always -p 8080:8080 -v /dev/shm:/dev/shm -v 你的pc文件夹:/workspace -e AUTHENTICATE_VIA_JUPYTER=你的登录密码 registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros`
+`docker run --gpus all --name=ml-workspace --restart=always -p 8080:8080 -v /dev/shm:/dev/shm -v 你的pc文件夹:/workspace -e AUTHENTICATE_VIA_JUPYTER=你的登录密码 -e  OPENP2P_TOKEN=你的openp2p的token registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest`
 
 ### portainer
 
