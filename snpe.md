@@ -18,8 +18,11 @@ docker run -it --rm -v .:/snpe jungin500/snpe:1.5x
 
 add snpe lib to PYTHONPATH
 
+add LD_LIBRARY_PATH
+
 ```
 export PYTHONPATH=${SNPE_ROOT}/lib/python:${PYTHONPATH}
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/snpe/lib/x86_64-linux-clang
 ```
 
 convert model
