@@ -95,7 +95,7 @@ pop os和ubuntu 安装
 # bind dir /workspace 使用-v冒号前面是pc的文件夹路径，后面容器内的文件夹路径
 # ssh 需要先设置ml账号的密码，即可通过账号密码访问
 
-docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros 
+docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest 
 ```
 ### docker run 
 
