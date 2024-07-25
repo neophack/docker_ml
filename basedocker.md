@@ -101,8 +101,8 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros
 
 `docker run --gpus all --name=ml-workspace --restart=always -p 8080:8080 -v /dev/shm:/dev/shm -v 你的pc文件夹:/workspace -e AUTHENTICATE_VIA_JUPYTER=你的登录密码 -e  OPENP2P_TOKEN=你的openp2p的token registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest`
 
-### 支持
-[MobileVLM](https://github.com/Meituan-AutoML/MobileVLM)
+### 支持训练
+>[MobileVLM](https://github.com/Meituan-AutoML/MobileVLM)
 
 ### portainer
 
