@@ -66,31 +66,29 @@ pop os和ubuntu 安装
 
 可以使用jupyter vnc vscode ssh sftp等常用工具，并且只占用一个端口。
 
+要求显卡驱动550以上
 ```
-# Ubuntu 20.04 including Python 3.8
-# NVIDIA CUDA® 12.0.1
-# NVIDIA cuBLAS from CUDA 12.0.1
-# NVIDIA cuDNN 8.7.0.84
-# NVIDIA NCCL 2.16.5 (optimized for NVIDIA NVLink®)
-# NVIDIA RAPIDS™ 22.12.0 (For x86, only these libraries are included: cudf, xgboost, rmm, cuml, and cugraph.)
-# Apex
-# rdma-core 36.0
-# NVIDIA HPC-X 2.13
+# Ubuntu 22.04 including Python 3.10
+# NVIDIA CUDA 12.4
+# NVIDIA cuBLAS 12.4.5.8
+# NVIDIA cuDNN 9.1.0.70
+# NVIDIA NCCL 2.21.5
+# NVIDIA RAPIDS™ 24.02
+# rdma-core 39.0
+# NVIDIA HPC-X 2.18
 # OpenMPI 4.1.4+
 # GDRCopy 2.3
 # TensorBoard 2.9.0
-# Nsight Compute 2022.4.1.6
-# Nsight Systems 2022.5.1
-# NVIDIA TensorRT™ 8.5.2.2
-# Torch-TensorRT 1.4.0dev0
-# NVIDIA DALI® 1.21.0
+# Nsight Compute 2024.1.0.13
+# Nsight Systems 2024.2.1.38
+# NVIDIA TensorRT™ 8.6.3
+# Torch-TensorRT 2.3.0a0
+# NVIDIA DALI® 1.36
+# nvImageCodec 0.2.0.7
 # MAGMA 2.6.2
 # JupyterLab 2.3.2 including Jupyter-TensorBoard
-# TransformerEngine 0.4
-# opencv-cuda 4.7.0
-# ml-workspace
-# sogou input
-# pytorch 1.11
+# TransformerEngine 1.5
+# PyTorch quantization wheel 2.1.2
 # novnc
 
 # bind port 8080 使用-p冒号前面是pc端口可以自己设置，后面是容器服务端口8080
@@ -102,6 +100,9 @@ docker pull registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:ros
 ### docker run 
 
 `docker run --gpus all --name=ml-workspace --restart=always -p 8080:8080 -v /dev/shm:/dev/shm -v 你的pc文件夹:/workspace -e AUTHENTICATE_VIA_JUPYTER=你的登录密码 -e  OPENP2P_TOKEN=你的openp2p的token registry.cn-shenzhen.aliyuncs.com/neoneone/ml-workspace:latest`
+
+### 支持
+[MobileVLM](https://github.com/Meituan-AutoML/MobileVLM)
 
 ### portainer
 
