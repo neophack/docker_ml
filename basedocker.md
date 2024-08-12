@@ -26,6 +26,7 @@
 
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#setting-up-nvidia-container-toolkit
 
+### pop os
 ```
 distribution=ubuntu22.04 && curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
 && curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | \
@@ -35,13 +36,33 @@ distribution=ubuntu22.04 && curl -fsSL https://nvidia.github.io/libnvidia-contai
 
 pop os不要安装这个包 nvidia-container-toolkit/jammy,now 1.8.0-1pop1~1644260705~22.04~60691e5 amd64 会导致新建容器报错
 
-pop os和ubuntu 安装 
+pop os 安装 
 
 `sudo apt install libnvidia-container1/bionic`
 
 `sudo apt install nvidia-container-toolkit/bionic`
 
-
+### ubuntu
+1.添加源:
+```
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+```
+2.可选，添加实验源:
+```
+sed -i -e '/experimental/ s/^#//g' /etc/apt/sources.list.d/nvidia-container-toolkit.list
+```
+3.更新软件包列表:
+```
+sudo apt-get update
+```
+4.安装 NVIDIA Container Toolkit 包:
+```
+sudo apt-get install -y nvidia-container-toolkit
+```
+### 测试
 重启docker 
 
 `sudo systemctl restart docker`
